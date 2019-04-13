@@ -5,8 +5,18 @@ function Class(num){
     this.getDisplayName=function () {
         return "Class "+num;
     };
-    
-    
+
+
+    this.registerAssignLeaderListener=function (teacher) {
+        //console.log(teacher.name);
+    };
+
+
+    this.registerJoinListener=function (teacher) {
+        //console.log(teacher.name);
+    };
+
+
     this.assignLeader=function (student) {
         all=student;
         if (student.isLeader===1&&num===student.klass.number){
@@ -17,24 +27,15 @@ function Class(num){
         }else{
             console.log("It is not one of us.");
         }
+        console.log("I am Tom. I know "+all.name+" become Leader of Class "+all.klass.number+".");
     };
     
     
     this.appendMember=function (student) {
         student.klass=this;
         app=student;
+        console.log("I am Tom. I know "+app.name+" has joined Class "+app.klass.number+".");
     };
-    
-    
-    this.registerAssignLeaderListener=function (teacher) {
-        if (all.klass.number===teacher.klasses[0].number||all.klass.number===teacher.klasses[1].number) {
-            console.log("I am "+teacher.name+". I know "+all.name+" become Leader of Class "+all.klass.number+".");
-        }
-    };
-    
-    this.registerJoinListener=function (teacher) {
-        console.log("I am "+teacher.name+". I know "+app.name+" has joined Class "+app.klass.number+".")
-    }
 }
 module.exports=Class;
 

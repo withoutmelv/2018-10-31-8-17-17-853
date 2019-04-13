@@ -150,9 +150,8 @@ describe("Class", () => {
             const otherKlass = new Class(3);
             const student = new Student(1, "Jerry", 21, klass);
             const teacher = new Teacher(1, "Tom", 21, [klass, otherKlass]);
-            klass.assignLeader(student);
             klass.registerAssignLeaderListener(teacher);
-
+            klass.assignLeader(student);
             expect(spy.calledWith("I am Tom. I know Jerry become Leader of Class 2.")).to.be.ok;
         });
     });
@@ -177,11 +176,8 @@ describe("Class", () => {
             const teacher = new Teacher(1, "Tom", 21, [klass, otherKlass]);
 
             const student = new Student(1, "Jerry", 21, otherKlass);
-            klass.appendMember(student);
             klass.registerJoinListener(teacher);
-
-
-
+            klass.appendMember(student);
             expect(spy.calledWith("I am Tom. I know Jerry has joined Class 2.")).to.be.ok;
         });
     });
