@@ -73,7 +73,6 @@ describe("Person", () => {
 
         describe("#introduceWith", () => {
             let studentJerry;
-
             before(() => {
                 studentJerry = new Student("Jerry", 8, klass);
             });
